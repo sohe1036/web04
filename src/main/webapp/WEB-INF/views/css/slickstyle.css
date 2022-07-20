@@ -1,0 +1,51 @@
+ /* slick 수정  */
+
+.slick-next, .slick-prev{ top: 0; bottom: -42px; width: 86px; z-index: 60;
+    height: 86px; text-indent: 9999px; background-color: rgba(0,0,0,0.4); }
+
+.slick-next:hover, .slick-prev:hover{ background:rgba(0,0,0,0.4); }
+.slick-prev{
+    top: auto;
+    bottom: 0; 
+    width: 84px; 
+    z-index: 90;
+    right: 254px;
+    left: auto;
+    height: 86px;
+    text-indent: -9999px;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    cursor: pointer;
+}
+.slick-next{
+    top: auto;
+    bottom: 0; 
+    width: 84px; 
+    z-index: 90;
+    right: 170px;
+    left: auto;
+    height: 86px;
+    text-indent: -9999px;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    cursor: pointer;
+}
+.slick-next:after, .slick-prev:after{ content:''; display: block; width: 15px; height: 34px; 
+    background-image: url("../img/main_sp.png"); 
+    background-repeat: no-repeat; margin: 0 auto; margin-top: -10px; }
+.slick-next:after{
+	background-position:-109px -408px;
+}
+.slick-prev:after{
+	background-position:-21px -408px;
+}
+#play_btn { top: auto; bottom: 0; width: 84px; z-index:90; right:86px; left:auto;
+height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.2);  
+position:absolute; cursor:pointer; }
+
+#play_btn:after { content:""; display:block;
+width: 15px; height: 26px; background-image: url("../img/main_sp.png"); 
+background-repeat: no-repeat; margin:0px auto; margin-top: -10px; 
+background-position:-64px -408px; }
+
+#play_btn.on:after { background-position:-152px -408px; }

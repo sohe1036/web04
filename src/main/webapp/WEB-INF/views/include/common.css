@@ -1,0 +1,149 @@
+@charset "UTF-8";
+  /*초기화*/
+        *{margin: 0%; padding: 0%; text-decoration: none; list-style: none;}
+        body, html{ width: 100%; overflow-x: hidden;}
+        ul {list-style: none;}
+        input, button{outline: 0; border: 0;}
+        a {text-decoration: none; color: #333;}
+        table, .table{display: table; border-collapse:collapse;}
+        tr, .tr { display: table-row;}
+        .wrap {clear: both; width: 100%;}
+        #header {width:100%;}
+
+        /*헤더*/
+        /* logo */
+        .logo {float: left; padding-top: 25px;}
+        /* tnb */
+        .tnb {padding-top: 27px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+        .login .sign::before {content: ""; background: url("../img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+        .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+        .login span:hover a{color:blue;}
+        /* gnb */
+        .top_hd_wrap {height: 50px; clear: both;}
+        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd; }
+        .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+        .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+        .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+        .mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+        .mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+        
+        .sub_menu {width: 1400px; margin: 0 auto;}
+        .sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+        .sub_ul1 {border-right: 1px solid#ddd;} 
+        .submenu {width: 100%; line-height: 0px;}
+        .sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+        .submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+        .sub_ul li:first-child a {margin-top: 15px;}
+
+        .main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+        .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+        .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+        .main_ul:hover .sub_ul a {display: block;}
+
+        .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+        
+        .content { clear: both; width: 100%; height: auto; overflow: hidden; }
+        .content_wrap {width: 1400px; margin: 0 auto;}
+
+        /*사이드*/
+        .right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+        .right_btn img {width: 90%; padding-bottom: 11px;}
+
+        /* 비주얼슬라이더*/
+        #ic {width:100%; overflow: hidden; position: relative; }
+        .img_box{ width:100%;}
+        .img_box li { float: left; width: 25%; position: relative; }
+        .imb_box li a {display: block;}
+        .img_box li a img{display: block; width: 100%; height: auto;}
+        
+
+         /* 게시판 스타일-의료진 예약 */
+        .medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
+        .medical a{color: #0087ab; line-height: 80px;}
+        .medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("../img/bg_main1.jpg");}
+        .medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
+        .main {display: block;  width: 400px;}
+        .medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
+        .medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
+        .medical{padding-left: 60px; padding-top: 20px;}
+        .medical li:hover{background-color: #0087ab; }
+        .medical li:hover a{color: #fff;}
+        .backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
+
+         /*공지사항, 게시판*/
+        .news_section { clear: both; width: 1200px; height: 450px; margin: 0 auto; }
+        .notice { float: left; width: 700px; height: 100%; }
+        .board { float: left; width: 500px; height: 100%; }
+        .notice .box { width: 700px; height: 400px; border:1px solid #ddd; margin: 0 auto;}
+        .board .box { width: 500px; height: 400px; border:1px solid #ddd; margin: 0 auto; background: url(../img/board_bg2.jpg); 
+            background-position: center; background-repeat: no-repeat; background-size: 500px 400px; }
+        .box h2 { text-align: center; padding: 50px; }
+        .board h2 { color: #fff; text-shadow: 0.5px 0.5px 0.5px #000; }
+        .notice .table { width: 650px; padding: 0 25px; height: 220px; }    
+        .board .table { width: 450px; padding: 0 25px; height: 220px; text-align: center; } 
+        .notice li { height: 60px;  width: 600px; line-height: 60px; margin: 0 auto; }
+        .notice li a { float: left; margin-left: 40px;}
+        .notice li span { float: right; margin-right: 20px; color: #999; }
+        .board ul { margin: 0 auto; }
+        .notice ul { margin: 0 auto; }
+        .board li { height: 60px; width: 400px; line-height: 60px; margin: 0 auto; }
+        .board li a { color: #fff; }
+        .notice li:first-child { border-top: 1px solid #333; border-collapse: collapse;}
+        .table li { border-bottom: 1px solid #ddd; border-collapse: collapse;}
+        .notice li:last-child { border-bottom: 1px solid #333; border-collapse: collapse;}
+        .board li:first-child { border-top: 1px solid #ddd; border-collapse: collapse; text-shadow: 0.5px 0.5px 0.5px #000; }
+
+        /*오시는길, 진료시간*/
+        .info_section { clear: both; width: 1200px; height: 450px; margin: 0 auto;  margin-top: 70px; }
+        .map { float: left; width: 650px; height: 100%;  }
+        .time { float: left; width: 550px; height: 100%; }
+        .map .box { width: 600px;  height: 400px; border:1px solid #ddd; margin: 0 auto; }
+        .time .box { width: 500px;  height: 400px; border:1px solid #ddd; margin: 0 auto; }
+        .map h2, .time h2 { text-align: center; padding: 40px; }
+        .map .box i {  text-align: center; }
+        .map .box span { display: block; text-align: center; }
+        .map .box span b { margin-right: 30px; }
+        .map .box  ul { width: 400px; height: 100px; line-height: 100px; margin: 0 auto; margin-top: 30px;  }
+        .map .box  ul li { float: left; width: 198px; text-align: center; background-color: #0087ab; border: 1px solid #fff; }
+        .map .box  ul li a { color: #fff; font-size: 18px; }
+        .time .table { width: 400px; padding: 0 25px; height: 300px; margin: 0 auto; } 
+        .time .table li { height: 50px; line-height: 50px; text-align: center; }
+        .time .table li:last-child { border: none; height: 80px; line-height: 80px; }
+        .call { font-size: 40px; font-weight: 520; color: #0087ab; }
+        .time b { padding-right: 30px; color: #0087ab; }   
+        .xi-whatsapp { font-size: 40px; }
+
+        /*푸터 sns*/
+        .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+        .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+        .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; 
+            margin: 0 10px;vertical-align: middle; background-size: cover}
+        .ft_link1 {background-image:url("../img/icon_quick_link1.png")}
+        .ft_link2 {background-image:url("../img/icon_quick_link2.png")}
+        .ft_link3 {background-image:url("../img/icon_quick_link3.png")}
+        .ft_link4 {background-image:url("../img/icon_quick_link4.png")}
+        .ft_link5 {background-image:url("../img/icon_quick_link5.png")}
+        .ft_link6 {background-image:url("../img/icon_quick_link6.png")}
+
+        /*푸터*/
+        #ft { clear: both; width: 100%; height: 300px; }
+        .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+        .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb span { margin: 0 10px; font-size: 13px; }
+        .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+        .fnb span:last-child:after { content: ""; }
+        .snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+        .snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+        .copy_wrap { float: left; }
+        .ft_logo { float: right; }
+        .copy_wrap b { display: block; margin-bottom: 10px; }
+        .copy_wrap p, .copy_wrap span { font-size: 13px; padding-right: 10px; color: #666; }
+        .copy { margin-top: 10px; color: #444; }
+
+        

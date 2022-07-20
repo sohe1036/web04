@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="qna">
+	<!-- 목록 불러오기 -->
+	<select id="qnaList" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna <include refid="search" /> order by qroot desc, qstep asc, qwritedate desc
+	</select>
+	
+	<select id="qnaCount" resultType="integer" >
+		select count(*) from qna <include refid="search" />
+	</select>
+	
+			<!-- 검색 조건 저정(제목이나 내용일때 / 작성자일때/ 모두일때 -->
+			<sql id="search">
+					<!-- 서치가 qtitle이거나 qcontent일때 '%'#키워드'%'(키워드는 검색한 내용) -->
+				<if test="search=='qtitle' or search=='qcontent'" >
+					where #{search } like '%' || #{keyword } || '%'
+				</if>
+					<!-- 작성자로 검색=>작성자 가저오기 include -->
+				<if test="search=='qwriter'">
+					where <include refid="writer"/>
+				</if>
+					<!-- 통합검색 -->
+				<if test="search=='all'">
+					where qtitle like '%' || #{keyword } || '%' OR 
+					qcontent like '%' || #{keyword } || '%' OR 
+					<include refid="writer"/> 
+				</if>
+			</sql>
+			
+			<!-- 작성자 가져오기 -->
+					<!-- 서브쿼리 이용해서 mem테이블의 id조회 (조건이 name이 키워드인 -->
+			<sql id="writer">
+				qwriter in (select u_id from mem where name like '%' || #{keyword} || '%' )
+			</sql>
+	
+	<!-- 글 상세보기 -->
+	<select id="qnaRead" resultType="com.okhospital.dto.QnaDTO" >
+		select * from qna <include refid="condi"/>
+	</select>
+
+	<!-- 질문하기 -->
+	<insert id="qnaWrite" >
+		insert into qna (qno, qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent ) 
+		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, seq_qna.currval, 0, 0  )
+	</insert>	
+															<!-- qroot 부모글번호이므로 currval로 (현재번호)  -->
+
+	<!-- 답변하기 -->
+	<insert id="replyWrite" >
+		insert into qna (qno, qtitle, qcontent, qwriter, qwritedate, qreadcnt, qroot, qstep, qindent ) 
+		values (seq_qna.nextval, #{qtitle }, #{qcontent }, #{qwriter }, sysdate, 0, #{qroot} , 1, 13  )
+	</insert>	
+	
+	<!-- 글 수정 -->
+	<update id="qnaUpdate" >
+		update qna set qtitle=#{qtitle }, qcontent=#{qcontent }, qwriter=#{qwriter }
+		<include refid="condi"/>
+	</update>
+	
+	<!-- 글 삭제  질문글 답변글 다 삭제해야 하므로 조건을 qroot로 -->
+	<delete id="qnaDelete">
+		delete from qna where qroot=#{qno }
+	</delete>
+	
+	<!-- 답변글 삭제 -->
+	<delete id="replyDelete">
+		delete from qna where qno=#{qno }
+	</delete>
+
+	<sql id="condi">
+		where qno=#{qno }
+	</sql>
+</mapper>

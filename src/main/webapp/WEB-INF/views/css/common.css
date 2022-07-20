@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    }
+
+/*초기화*/
+*{margin: 0%; padding: 0%; text-decoration: none; list-style: none;}
+body, html{ width: 100%; overflow-x: hidden; font-family: 'HallymGothic-Regular'; }
+ul {list-style: none;}
+a {text-decoration: none; color: #333;}
+input, button{outline: 0; border: 0;}
+table, .table{display: table; border-collapse:collapse;}
+tr, .tr { display: table-row;}
+.wrap {clear: both; width: 100%;}
+#header {width:100%;}
+
+/*헤더*/
+/* logo */
+.logo {float: left; padding-top: 25px;}
+/* tnb */
+.tnb {padding-top: 27px;}
+.login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+.login .sign::before {content: ""; background: url("../img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+.line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+.login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+.login span:hover a{color:blue;}
+/* gnb */
+.top_hd_wrap {height: 50px; clear: both;}
+.top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+.gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd; }
+.gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+.background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+.main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+.main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+.mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+.mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+.mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+
+.sub_menu {width: 1400px; margin: 0 auto;}
+.sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+.sub_ul1 {border-right: 1px solid#ddd;} 
+.submenu {width: 100%; line-height: 0px;}
+.sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+.submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+.sub_ul li:first-child a {margin-top: 15px;}
+
+.main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+.main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+.main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+.main_ul:hover .sub_ul a {display: block;}
+
+.sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+
+ /*사이드*/
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+
+/*푸터 sns*/
+.ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+.ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500; }
+.ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; 
+    margin: 0 10px;vertical-align: middle; background-size: cover}
+.ft_link1 {background-image:url("../img/icon_quick_link1.png")}
+.ft_link2 {background-image:url("../img/icon_quick_link2.png")}
+.ft_link3 {background-image:url("../img/icon_quick_link3.png")}
+.ft_link4 {background-image:url("../img/icon_quick_link4.png")}
+.ft_link5 {background-image:url("../img/icon_quick_link5.png")}
+.ft_link6 {background-image:url("../img/icon_quick_link6.png")}
+
+
+/*푸터*/
+#ft { clear: both; width: 100%; height: 300px; }
+.fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+.fnb .inner { width: 1350px; height: 100%; margin-left: 30px; margin: 0 auto; }
+.fnb span { margin: 0 10px; font-size: 13px; }
+.fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+.fnb span:last-child:after { content: ""; }
+.snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+.snb .inner{ width: 1350px; height: 100%; margin-left: 40px; margin: 0 auto; }
+.copy_wrap { float: left; }
+.ft_logo { float: right; }
+.copy_wrap b { display: block; margin-bottom: 10px; }
+.copy_wrap p, .copy_wrap span { font-size: 13px; padding-right: 10px; color: #666; }
+.copy { margin-top: 10px; color: #444; }
+    
