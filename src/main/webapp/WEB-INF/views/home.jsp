@@ -175,7 +175,7 @@
 	<div class="" id="header_wrap">
               <div class="top_nav_wrap">
                   <div class="logo">
-                      <a href=""><img src="./img/logo_brand.png" alt="로고"></a> 
+                      <a href="${path1 }/"><img src="./img/logo_brand.png" alt="로고"></a> 
                   </div>
                   <nav class="tnb">
                       <div class="login">
@@ -207,17 +207,17 @@
                           <ul class="main_ul">
                               <div class="background">
                               </div>
-                              <li class="mainmenu"><a href="intro.jsp">병원소개</a>
+                               <li class="mainmenu"><a href="${path1 }/menu/intro.do">병원소개</a>
                                   <ul class="sub_ul">
                                       <li class="submenu"><a href="intro.jsp">병원안내</a></li>
                                       <li class="submenu"><a href="drintro.jsp">의료진 소개</a></li>
                                       <li class="submenu"><a href="map.jsp">오시는 길</a></li>
                                   </ul>
-                              </li>  
+                              </li>   
                               <li class="mainmenu"><a href="info.jsp">진료안내</a>
                                   <ul class="sub_ul">
                                       <li class="submenu"><a href="info.jsp">진료안내</a></li>
-                                      <li class="submenu"><a href="reserve.jsp">진료예약</a></li>
+                                      <li class="submenu"><a href="${path1 }/reserve/reserveForm.do">진료예약</a></li>
                                       <li class="submenu"><a href="time.jsp">진료시간</a></li>
                                   </ul>
                               </li>  
@@ -244,7 +244,7 @@
                               </li>        
                               <li class="mainmenu mm_last"><a href="news.jsp">병원소식</a>
                                   <ul class="sub_ul sub_ul1">
-                                      <li class="submenu"><a href="notice.jsp">공지사항</a></li>
+                                     <!--  <li class="submenu"><a href="notice.jsp">공지사항</a></li> -->
                                       <li class="submenu"><a href="${path1 }/databank/list.do">자료실</a></li>
                                       <li class="submenu"><a href="${path1 }/board/list.do">게시판</a></li>
                                       <li class="submenu"><a href="${path1 }/qna/list.do">Q&A</a></li>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reserve">
+	
+	<!-- 예약 목록 -->
+	<select id="reserveList" resultType="com.okhospital.dto.ReserveDTO">
+		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,rno,confirm,time from reserve order by rno desc
+	</select>
+	<!-- 예약 상세 -->
+	<select id="reserveRead" resultType="com.okhospital.dto.ReserveDTO">
+		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,rno,confirm,time from reserve where rno = #{rno }
+	</select>
+	
+	<!-- 예약하기 -->
+	<insert id="reserveInsert">
+		insert into reserve (treat, doctor, rname, birth, phone, rdate,time, memo, rno)
+		values (#{treat},#{doctor}, #{rname},#{birth}, #{phone}, #{rdate},#{time},#{memo},seq_reserve.nextval) 
+	</insert>
+	
+	<!-- 예약 날짜시간중복확인 -->
+	<select id="reserveCheck" resultType="com.okhospital.dto.ReserveDTO">
+		select doctor, rdate, time from reserve
+	</select>
+	
+	<!--예약 수정하기 -->
+	<update id="reserveUpdate">
+		update reserve set treat=#{treat},  doctor=#{doctor}, rname=#{rname}, 
+		birth=#{birth}, phone=#{phone}, rdate=#{rdate}, time=#{time} where rno=#{rno}
+	</update>
+	
+	<!-- 예약 확정 -->
+	<update id="reserveConfirm">
+		update reserve set confirm=#{confirm} where rno=#{rno}
+	</update>
+	
+	<!-- 예약 취소 -->
+	<delete id="reserveDelete">
+		delete from reserve where rno=#{rno} 
+	</delete>
+</mapper>

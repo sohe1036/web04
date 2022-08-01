@@ -42,6 +42,11 @@
    .sub_content .inner { width: 1100px; margin: 0 auto; margin-top: 100px; height: 100%; }
    .sub_content .inner h2 { margin-bottom: 50px; }
    .sub_content .inner li { font-size: 25px; height: 30px; padding: 10px 0; }
+   
+   .button0{display: inline-block; width: 100px;}
+	.button1{display: inline-block; width: 100px;}
+	.button0{ border: 1px solid #ddd; height: 30px; color: rgb(0, 0, 0); }
+	.button1{border: 1px solid #0087ab; height: 30px; color:#0087ab}
 </style>
 </head>
 <body>
@@ -79,7 +84,11 @@
                      			<a href="${path1 }">내 Q&A  > </a>
                      		</li>
                      		<li>
-                     			<a href="${path1 }">내 후기  ></a>
+        						<form method="post" action="${path1 }/reserve/reserveRead.do">
+        							<span>예약 조회하기</span>
+        							<input type="text" name="rno" id="rno" style="width: 150px; height: 40px; border:1px solid #ddd; text-align: center;">
+        							<input type="submit" value="확인" class="button1" >
+        						</form>
                      		</li>
                      		<c:if test="${sid=='admin' }">
                      		<li>
@@ -90,6 +99,9 @@
                      		</li>
                      		<li>
                      			<a href="${path1 }/board/write_form.do">게시판 추가  ></a>
+                     		</li>
+                     		<li>
+                     			<a href="${path1 }/reserve/reserveList.do">예약목록  ></a>
                      		</li>
                      	</c:if>
                      	</ul>
