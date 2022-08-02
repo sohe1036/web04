@@ -14,7 +14,10 @@
 <script src="./js/jquery-ui-1.9.2.custom.js"></script>
 
 <style>
-
+   .button0{display: inline-block; width: 100px; text-align: center; line-height: 30px;}
+	.button1{display: inline-block; width: 100px; text-align: center; line-height: 30px;}
+	.button0{ border: 1px solid #ddd; height: 30px; color: rgb(0, 0, 0); }
+	.button1{border: 1px solid #0087ab; height: 30px; color:#0087ab}
 </style>
 <title>헤더</title>
 </head>
@@ -66,7 +69,7 @@
                                   <ul class="sub_ul">
                                       <li class="submenu"><a href="info.jsp">진료안내</a></li>
                                   	  <li class="submenu"><a href="${path1 }/reserve/reserveForm.do">진료예약</a></li>
-                                      <li class="submenu"><a href="time.jsp">진료시간</a></li>
+                                      <li class="submenu"><a href="${path1 }/reserve/reserveCheck.do">예약확인</a></li>
                                   </ul>
                               </li>  
                               <li class="mainmenu"><a href="treat1.jsp">수정체/망막질환</a>

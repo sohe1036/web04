@@ -28,10 +28,6 @@ public class ReserveDAOImpl implements ReserveDAO {
 		sqlSession.insert("reserve.reserveInsert", redto);
 	}
 
-	@Override
-	public ReserveDTO reserveCheck() throws Exception {
-		return sqlSession.selectOne("reserve.reserveCheck");
-	}
 
 	@Override
 	public void reserveUpdate(ReserveDTO redto) throws Exception {

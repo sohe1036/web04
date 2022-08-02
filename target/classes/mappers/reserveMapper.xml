@@ -19,15 +19,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values (#{treat},#{doctor}, #{rname},#{birth}, #{phone}, #{rdate},#{time},#{memo},seq_reserve.nextval) 
 	</insert>
 	
-	<!-- 예약 날짜시간중복확인 -->
-	<select id="reserveCheck" resultType="com.okhospital.dto.ReserveDTO">
-		select doctor, rdate, time from reserve
-	</select>
-	
 	<!--예약 수정하기 -->
 	<update id="reserveUpdate">
-		update reserve set treat=#{treat},  doctor=#{doctor}, rname=#{rname}, 
-		birth=#{birth}, phone=#{phone}, rdate=#{rdate}, time=#{time} where rno=#{rno}
+		update reserve set treat=#{treat}, doctor=#{doctor}, rname=#{rname}, 
+		birth=#{birth}, phone=#{phone}, rdate=#{rdate}, time=#{time}, memo=#{memo} where rno=#{rno}
 	</update>
 	
 	<!-- 예약 확정 -->

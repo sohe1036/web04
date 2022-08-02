@@ -30,11 +30,6 @@ public class ReserveServiceImpl implements ReserveService {
 	}
 
 	@Override
-	public ReserveDTO reserveCheck() throws Exception {
-		return reserveDao.reserveCheck();
-	}
-
-	@Override
 	public void reserveUpdate(ReserveDTO redto) throws Exception {
 		reserveDao.reserveUpdate(redto);
 	}

@@ -218,7 +218,7 @@
                                   <ul class="sub_ul">
                                       <li class="submenu"><a href="info.jsp">진료안내</a></li>
                                       <li class="submenu"><a href="${path1 }/reserve/reserveForm.do">진료예약</a></li>
-                                      <li class="submenu"><a href="time.jsp">진료시간</a></li>
+                                      <li class="submenu"><a href="${path1 }/reserve/reserveCheck.do">예약확인</a></li>
                                   </ul>
                               </li>  
                               <li class="mainmenu"><a href="treat1.jsp">수정체/망막질환</a>

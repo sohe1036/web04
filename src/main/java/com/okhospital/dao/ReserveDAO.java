@@ -14,9 +14,6 @@ public interface ReserveDAO {
 	//예약하기
 	public void reserveInsert(ReserveDTO redto) throws Exception;
 	
-	//예약중복확인
-	public ReserveDTO reserveCheck() throws Exception;
-	
 	//예약수정
 	public void reserveUpdate(ReserveDTO redto) throws Exception;
 	

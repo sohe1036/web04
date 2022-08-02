@@ -46,7 +46,7 @@
                     	</ul>
                     <c:forEach items="${reserveList }" var="list">
                     	<ul>
-                    		<li>${list.rno }</li>
+                    		<li><a href="${path1 }/reserve/getReserve.do?rno=${list.rno}">${list.rno }</a></li>
                     	</ul>
                     	<ul>
                     		<li>${list.rname }</li>
