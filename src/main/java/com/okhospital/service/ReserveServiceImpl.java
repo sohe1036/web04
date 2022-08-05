@@ -25,6 +25,11 @@ public class ReserveServiceImpl implements ReserveService {
 	}
 
 	@Override
+	public List<ReserveDTO> reserveDetail(ReserveDTO redto) throws Exception {
+		return reserveDao.reserveDetail(redto);
+	}
+
+	@Override
 	public void reserveInsert(ReserveDTO redto) throws Exception {
 		reserveDao.reserveInsert(redto);
 	}

@@ -24,6 +24,11 @@ public class ReserveDAOImpl implements ReserveDAO {
 	}
 
 	@Override
+	public List<ReserveDTO> reserveDetail(ReserveDTO redto) throws Exception {
+		return sqlSession.selectList("reserve.reserveDetail", redto);
+	}
+
+	@Override
 	public void reserveInsert(ReserveDTO redto) throws Exception {
 		sqlSession.insert("reserve.reserveInsert", redto);
 	}

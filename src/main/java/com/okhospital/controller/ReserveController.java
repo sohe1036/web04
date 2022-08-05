@@ -46,7 +46,7 @@ public class ReserveController {
 	@RequestMapping(value="reserveInsert.do" , method=RequestMethod.POST)
 	public String reserveInsert (ReserveDTO redto , Model model) throws Exception{
 		reserveService.reserveInsert(redto);
-		return "reserve/reserveList";
+		return "redirect:reserveList.do";
 	}
 	
 	//예약리스트
@@ -56,6 +56,7 @@ public class ReserveController {
 		model.addAttribute("reserveList", reserveList);
 		return "reserve/reserveList";
 	}
+	/*
 	//예약상세보기
 	@RequestMapping(value="getReserve.do",method=RequestMethod.GET)
 	public String getReserve (@RequestParam ("rno") int rno , Model model) throws Exception{
@@ -63,13 +64,21 @@ public class ReserveController {
 		model.addAttribute("reserve", reserve);
 		return "reserve/reserveRead";
 	}
+	*/
+	//예약 상세보기 -이름,생년월일
+	@RequestMapping(value="reserveDetail.do",method=RequestMethod.POST )
+	public String reserveDetail (ReserveDTO redto, Model model) throws Exception{
+		List<ReserveDTO> reserve = reserveService.reserveDetail(redto);
+		model.addAttribute("reserve", reserve);
+		return "reserve/reserveRead";
+	}
 
-	//예약번호로 조회(post)
+	//예약 상세보기 -예약번호로 조회(post)
 	@RequestMapping(value="reserveRead.do",method=RequestMethod.POST)
 	public String reserveRead (@RequestParam ("rno") int rno , Model model) throws Exception{
 		ReserveDTO reserve = reserveService.reserveRead(rno);
 		model.addAttribute("reserve", reserve);
-		return "reserve/reserveRead";
+		return "reserve/reserveRead2";
 	}
 	
 	//예약 수정 폼
@@ -91,7 +100,13 @@ public class ReserveController {
 	@RequestMapping(value="reserveConfirm.do", method=RequestMethod.POST)
 	public String reserveConfirm(ReserveDTO redto, Model model) throws Exception{
 		reserveService.reserveConfirm(redto);
-		return "redirect:reserveRead.do"+redto.getRno();
+		return "redirect:reserveList.do";
 	}
 	
+	//예약 삭제
+	@RequestMapping(value="reserveDelete.do" ,method=RequestMethod.GET)
+	public String reserveDelete(@RequestParam ("rno") int rno , Model model) throws Exception{
+		reserveService.reserveDelete(rno);
+		return "reserve/reserveCheck";
+	}
 }

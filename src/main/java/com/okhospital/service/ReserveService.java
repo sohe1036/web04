@@ -12,6 +12,9 @@ public interface ReserveService {
 		//예약상세
 		public ReserveDTO reserveRead(int rno) throws Exception;
 		
+		//예약상세-이름
+		public List<ReserveDTO> reserveDetail(ReserveDTO redto) throws Exception;
+		
 		//예약하기
 		public void reserveInsert(ReserveDTO redto) throws Exception;
 		

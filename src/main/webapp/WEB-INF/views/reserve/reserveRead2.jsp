@@ -24,7 +24,6 @@
 		<div class="content">
 			<div class="reserveRead">
 				<h2>예약확인</h2>
-				<c:forEach items="${reserve }" var="reserve">
 				<ul>
 					<li>예약번호 : ${reserve.rno }</li>
 					<li>예약자 : ${reserve.rname }</li>
@@ -65,7 +64,6 @@
 						</c:if>
 					</li>
 				</ul>
-				</c:forEach>
 			</div>
 		</div>
 		<c:import url="../include/footer.jsp"></c:import>

@@ -23,7 +23,7 @@
      .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300;}
      .sub_bg_line {height: 75px;background: #327cb6;}
      .sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-     .sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 25%; height: 20px; display: block; float:left; display: block;}  
+     .sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33.3%; height: 20px; display: block; float:left; display: block;}  
      .sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
      .sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
@@ -68,10 +68,9 @@
                     <div class="sub_bg_text">
                         <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
                         <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
-                        <a href="notice.html">공지사항</a>
-                        <a href="data.html"><b>자료실</b></a>
-                        <a href="board.html">게시판</a>
-                        <a href="qna.html">Q&A</a>
+                         <a href="${path1 }/databank/list.do"><b>자료실</b></a>
+	                     <a href="${path1 }/board/list.do">게시판</a>
+	                     <a href="${path1 }/board/list.do">Q&A</a>
                     </div>
                 </div>          
             </div>

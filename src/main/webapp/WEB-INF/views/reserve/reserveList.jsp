@@ -15,9 +15,10 @@
  .content {clear: both; width: 100%;}
  .sub_bg_img{height: 142px; background-image: url("/img/sub_visual01.jpg");}
 .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 120px; color: #000; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
-.reserveList {width: 1120px; margin: 0 auto;} 
-.reserveList li {float:left; width: 25%;}
- 
+.reserveList {width: 1120px; margin: 0 auto; overflow: hidden; margin-bottom: 30px;} 
+.reserveList li {float:left; width: 20%;}
+ .tit {font-size: 24px; text-align: center; margin-bottom: 30px;}
+ .txt {font-size: 20px; text-align: center; margin-bottom: 15px;}
  </style>
 </head>
 <body>
@@ -28,35 +29,47 @@
                 <c:import url="../include/side.jsp"></c:import>
                 <div class="sub_bg_menu">
                     <div class="sub_bg_img">
-                        <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
                         <h2>예약목록</h2> 
                     </div>
                     <div class="reserveList">
                     	<ul>
-                    		<li>예약번호</li>
+                    		<li class="tit">예약번호</li>
                     	</ul>
                     	<ul>
-                    		<li>예약자</li>
+                    		<li class="tit">예약자</li>
                     	</ul>
                     	<ul>
-                    		<li>예약날짜</li>
+                    		<li class="tit">예약날짜</li>
                     	</ul>
                     	<ul>
-                    		<li>예약시간</li>
+                    		<li class="tit">예약시간</li>
+                    	</ul>
+                    	<ul>
+                    		<li class="tit">확정여부</li>
                     	</ul>
                     <c:forEach items="${reserveList }" var="list">
                     	<ul>
-                    		<li><a href="${path1 }/reserve/getReserve.do?rno=${list.rno}">${list.rno }</a></li>
+                    		<li class="txt"><a href="${path1 }/reserve/getReserve.do?rno=${list.rno}">${list.rno }</a></li>
                     	</ul>
                     	<ul>
-                    		<li>${list.rname }</li>
+                    		<li class="txt">${list.rname }</li>
                     	</ul>
                     	<ul>
-                    		<li>${list.rdate }</li>
+                    		<li class="txt">${list.rdate }</li>
                     	</ul>
                     	<ul>
-                    		<li>${list.time }</li>
+                    		<li class="txt">${list.time }</li>
                     	</ul>
+                    	<c:if test="${list.confirm !=null }">
+                    	<ul>
+                    		<li class="txt">${list.confirm }</li>
+                    	</ul>
+                    	</c:if>
+                    	<c:if test="${list.confirm ==null }">
+                    	<ul>
+                    		<li class="txt">예약대기</li>
+                    	</ul>
+                    	</c:if>
                     </c:forEach>	
                     </div>
               	</div>
