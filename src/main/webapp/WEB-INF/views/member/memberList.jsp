@@ -58,7 +58,7 @@
 		<%@include file="../include/side.jsp" %>
 			<div class="page_tit">
 	             <div class="inner">
-	                 <h3>공지사항</h3>
+	                 <h3>고객 리스트</h3>
 	                 <p>
 	                     <span><a href="index.html">HOME</a></span>
 	                     &nbsp;&nbsp;

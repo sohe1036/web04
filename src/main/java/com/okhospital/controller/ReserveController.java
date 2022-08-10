@@ -46,7 +46,7 @@ public class ReserveController {
 	@RequestMapping(value="reserveInsert.do" , method=RequestMethod.POST)
 	public String reserveInsert (ReserveDTO redto , Model model) throws Exception{
 		reserveService.reserveInsert(redto);
-		return "redirect:reserveList.do";
+		return "redirect:/";
 	}
 	
 	//예약리스트
@@ -56,15 +56,15 @@ public class ReserveController {
 		model.addAttribute("reserveList", reserveList);
 		return "reserve/reserveList";
 	}
-	/*
+	
 	//예약상세보기
 	@RequestMapping(value="getReserve.do",method=RequestMethod.GET)
 	public String getReserve (@RequestParam ("rno") int rno , Model model) throws Exception{
 		ReserveDTO reserve = reserveService.reserveRead(rno);
 		model.addAttribute("reserve", reserve);
-		return "reserve/reserveRead";
+		return "reserve/reserveRead2";
 	}
-	*/
+	
 	//예약 상세보기 -이름,생년월일
 	@RequestMapping(value="reserveDetail.do",method=RequestMethod.POST )
 	public String reserveDetail (ReserveDTO redto, Model model) throws Exception{

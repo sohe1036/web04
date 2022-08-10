@@ -130,8 +130,10 @@
                            </tbody>                     
                         </table>
                         <div class="button">
+                        <c:if test="${sid =='admin' }">
                         	<a href="${path1 }/board/edit.do?seq=${board.seq }">글 수정</a>
                             <a href="${path1 }/board/delete.do?seq=${board.seq }">글 삭제</a>
+                        </c:if>    
                         </div>  
                    </div>
                </div>
