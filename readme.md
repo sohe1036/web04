@@ -35,8 +35,9 @@
         ![자료실목록](./data/web04_databank_1.png)
         * 데이터 목록은 데이터베이스에서 데이터를 리스트로 받아 view에서 반복문으로 처리
         ##
-        <img src="./data/web04_databank_2.png" alt="자료실상세" style="width:50%; display:inline-block; float:left;">
-        <img src="./data/web04_databank.png" alt="자료실수정" style="width:50%; display:inline-block;">
+        <img src="./data/web04_databank_2.png" alt="자료실상세" style="width:50%; display:inline; ">
+        <img src="./data/web04_databank.png" alt="자료실수정" style="width:50%; display:inline;">
+
         * controller에서 MultipartFile를 통한 파일 전송
 
      #
@@ -52,8 +53,8 @@
         ![예약목록](./data/web04_reserve_5.png)
         * 예약목록은 관리자 마이페이지에서만 확인이 가능하며, Mapper의 update문으로 예약확정처리
         ##
-        <img src="./data/web04_reserve_4.png" alt="예약확인1" style="width:50%; display:inline-block; float:left;">
-        <img src="./data/web04_reserve_1.png" alt="예약확인2" style="width:50%; display:inline-block;">  
+        <img src="./data/web04_reserve_4.png" alt="예약확인1" style="width:50%; display:inline; >
+        <img src="./data/web04_reserve_1.png" alt="예약확인2" style="width:50%; display:inline;">  
     
-        * 예약조회는 이름, 생년월일로 조회하거나 예약번호로 조회가증하도록 구현
-        
+        * 예약조회는 이름, 생년월일로 조회하거나 예약번호로 조회가능하도록 구현
+
