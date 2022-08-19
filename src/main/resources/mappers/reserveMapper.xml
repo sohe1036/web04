@@ -6,16 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 예약 목록 -->
 	<select id="reserveList" resultType="com.okhospital.dto.ReserveDTO">
-		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,rno,confirm,time from reserve order by rno desc
+		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,
+		rno,confirm,time from reserve order by rno desc
 	</select>
 	<!-- 예약 상세 -->
 	<select id="reserveRead" resultType="com.okhospital.dto.ReserveDTO">
-		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,rno,confirm,time from reserve where rno = #{rno }
+		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,
+		rno,confirm,time from reserve where rno = #{rno }
 	</select>
 	
 	<!-- 예약 상세 (이름,생년월일) -->
 	<select id="reserveDetail" resultType="com.okhospital.dto.ReserveDTO">
-		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,rno,confirm,time from reserve where rname = #{rname } and birth=#{birth }
+		select treat,doctor,rname,birth,phone, to_char(rdate,'YYYY-MM-DD')as rdate,memo,
+		rno,confirm,time from reserve where rname = #{rname } and birth=#{birth }
 	</select>
 	
 	<!-- 예약하기 -->
